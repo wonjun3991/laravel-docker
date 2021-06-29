@@ -10,3 +10,11 @@
 - Mysql:latest
 - Nginx:alpine
 
+## 실행
+
+```shell
+docker-compose up -d
+docker-compose exec app php artisan config:clear
+docker-compose exec app php artsian migrate
+```
+

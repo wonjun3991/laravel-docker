@@ -44,12 +44,11 @@ services:
             - "${DB_PORT}:3306"
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}
-            MYSQL_USER: ${DB_USERNAME}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
             SERVICE_TAGS: dev
             SERVICE_NAME: mysql
         volumes:
-            - dbdata:/var/lib/mysql/
+            - dbdata:/var/lib/mysql-files/
             - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
         networks:
             - app-network
