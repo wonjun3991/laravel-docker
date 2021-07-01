@@ -15,7 +15,7 @@ services:
         working_dir: /var/www
         volumes:
             - ./:/var/www
-            - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+            - ./docker/php/local.ini:/usr/local/etc/php/conf.d/local.ini
         networks:
             - app-network
 
@@ -52,7 +52,6 @@ services:
             - ./docker/mysql/my.cnf:/etc/mysql/my.cnf
         networks:
             - app-network
-
 #Docker Networks
 networks:
     app-network:
