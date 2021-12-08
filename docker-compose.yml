@@ -36,7 +36,7 @@ services:
 
     #MySQL Service
     db:
-        image: mysql:latest
+        image: mysql:8
         container_name: db
         restart: unless-stopped
         tty: true
@@ -45,6 +45,8 @@ services:
         environment:
             MYSQL_DATABASE: ${DB_DATABASE}
             MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+            MYSQL_USER: ${DB_USER}
+            MYSQL_PASSWORD: ${DB_PASSWORD}
             SERVICE_TAGS: dev
             SERVICE_NAME: mysql
         volumes:
